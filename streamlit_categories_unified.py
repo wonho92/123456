@@ -22,6 +22,46 @@ def save_submission(file, data):
 
 
 import streamlit as st
+
+# ✅ 스타일 커스터마이징
+st.markdown("""
+    <style>
+    /* 사이드바 전체 배경 */
+    [data-testid="stSidebar"] {
+        background-color: #f5f6fa;
+        padding-top: 40px;
+    }
+
+    /* 라디오 버튼 전체 텍스트 크기와 간격 */
+    div[data-baseweb="radio"] > div {
+        margin-bottom: 14px;
+        font-size: 16px;
+    }
+
+    /* 라벨 텍스트 스타일 */
+    label[data-testid="stMarkdownContainer"] > div {
+        font-size: 16px;
+        font-weight: 500;
+        color: #1e1e1e;
+    }
+
+    /* 타이틀 영역 (메뉴를 선택하세요 등) */
+    .stRadio > label {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    /* 사이드바의 하단 방문자 수 텍스트 */
+    .stMarkdown.small-text {
+        color: #888888;
+        font-size: 13px;
+        padding-top: 12px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 import pytz
 from datetime import datetime
 
@@ -32,38 +72,6 @@ now = seoul_tz.localize(datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
 # 두 개의 컬럼 (로고 + 시간)
 col1, col2 = st.columns([1, 4])  # ✅ 이 줄 꼭 필요
 
-# ✅ ① 여기에 CSS 삽입
-st.markdown("""
-    <style>
-    [data-testid="stSidebar"] {
-        background-color: #F8F9FA;
-        padding-top: 40px;
-    }
-
-    .css-1d391kg {
-        font-size: 20px !important;
-        font-weight: bold;
-        color: #333333;
-        margin-bottom: 20px;
-    }
-
-    div[data-baseweb="radio"] > div {
-        margin-bottom: 16px;
-    }
-
-    label[data-testid="stMarkdownContainer"] > div {
-        font-size: 16px;
-        font-weight: 500;
-        color: #1c1c1c;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# ✅ ② 그 다음에 메뉴 구성 코드
-menu = st.sidebar.radio("📂 메뉴 선택", options=[
-    "회사 소개", "회사생활안내", "인사제도", "복리후생", "Q&A", "커피챗"
-])
-
 
 with col1:
     st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg", width=200)
@@ -73,7 +81,6 @@ with col2:
         f"<div style='text-align:right; font-size:14px; color:gray;'>🕒 현재 시간: {now}</div>",
         unsafe_allow_html=True
     )
-
 
 
 import pandas as pd
