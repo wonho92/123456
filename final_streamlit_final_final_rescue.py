@@ -167,7 +167,7 @@ if menu == "Q&A":
         question = st.text_area("문의하실 질문", height=150)
         submitted = st.form_submit_button("제출")
         if submitted:
-    save_submission("qa_submissions.csv", {
+         save_submission("qa_submissions.csv", {
         "name": name,
         "org": org,
         "career": career,
@@ -177,7 +177,7 @@ if menu == "Q&A":
     })
     st.success("✅ Q&A 문의가 정상적으로 제출되었습니다.")
     st.experimental_rerun()
-            save_submission("qa_submissions.csv", {
+    save_submission("qa_submissions.csv", {
                 "name": name,
                 "org": org,
                 "career": career,
@@ -197,7 +197,7 @@ elif menu == "커피챗":
         resume = st.file_uploader("이력서/포트폴리오 첨부", type=["pdf", "docx"])
         submitted = st.form_submit_button("신청")
         if submitted:
-    save_submission("coffee_submissions.csv", {
+         save_submission("coffee_submissions.csv", {
         "name": name,
         "phone": phone,
         "dept": dept,
@@ -206,7 +206,7 @@ elif menu == "커피챗":
     })
     st.success("✅ 커피챗 신청이 정상적으로 제출되었습니다.")
     st.experimental_rerun()
-            save_submission("coffee_submissions.csv", {
+    save_submission("coffee_submissions.csv", {
                 "name": name,
                 "phone": phone,
                 "dept": dept,
@@ -288,7 +288,5 @@ elif menu == "관리자 전용":
                         file_name=row["resume_uploaded"],
                         mime="application/octet-stream"
                     )
-    else:
-        st.info("커피챗 신청 기록이 없습니다.")
-    else:
-        st.info("커피챗 신청 기록이 없습니다.")
+else:
+    st.info("커피챗 신청 기록이 없습니다.")
