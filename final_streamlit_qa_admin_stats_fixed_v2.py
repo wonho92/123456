@@ -84,7 +84,6 @@ st.title("💬 질문을 선택하고 답변을 확인하세요")
 
 if menu in ["회사 일반", "조직문화", "인사제도", "복리후생"]:
     filtered = [q for q in qa_data if q["category"] == menu]
-    st.title("💬 질문을 선택하고 답변을 확인하세요")
     for qa in filtered:
         with st.expander(qa["question"]):
             st.write(qa["answer"])
