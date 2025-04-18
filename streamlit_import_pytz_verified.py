@@ -238,10 +238,10 @@ elif menu == "커피챗":
     pass
 
 # Q&A 표시
-elif menu in ["회사 소개 Q&A", "회사생활안내"]:
+elif menu in ["회사제도안내-회사비전","회사제도안내-근무제도","회사제도안내-조직문화","회사제도안내-평가보상","회사생활안내"]:
     st.header(f"📘 {menu}")
     for qa in qa_data:
-        if qa["category"] == menu or (menu == "회사 제도 안내" and qa["category"].startswith("회사 제도 안내 -")):
+        if qa["category"] == menu or (menu == "회사 제도 안내" and qa["category"].startswith("회사제도안내-")):
             with st.expander("💬 " + qa["question"]):
                 st.write(qa["answer"])
     pass
