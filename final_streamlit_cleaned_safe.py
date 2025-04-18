@@ -6,7 +6,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-</style>
+# </style>
 
 import streamlit as st
 st.markdown("""<style>[data-testid="stAppViewContainer"] {background-image: url('photo_2024-03-27_12-49-56.jpg');background-size: cover;background-position: top;background-repeat: no-repeat;}[data-testid="stSidebar"] {background-color: rgba(255, 255, 255, 0.85);}</style>""", unsafe_allow_html=True)
