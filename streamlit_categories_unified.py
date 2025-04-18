@@ -32,6 +32,39 @@ now = seoul_tz.localize(datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
 # 두 개의 컬럼 (로고 + 시간)
 col1, col2 = st.columns([1, 4])  # ✅ 이 줄 꼭 필요
 
+# ✅ ① 여기에 CSS 삽입
+st.markdown("""
+    <style>
+    [data-testid="stSidebar"] {
+        background-color: #F8F9FA;
+        padding-top: 40px;
+    }
+
+    .css-1d391kg {
+        font-size: 20px !important;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+    div[data-baseweb="radio"] > div {
+        margin-bottom: 16px;
+    }
+
+    label[data-testid="stMarkdownContainer"] > div {
+        font-size: 16px;
+        font-weight: 500;
+        color: #1c1c1c;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# ✅ ② 그 다음에 메뉴 구성 코드
+menu = st.sidebar.radio("📂 메뉴 선택", options=[
+    "회사 소개", "회사생활안내", "인사제도", "복리후생", "Q&A", "커피챗"
+])
+
+
 with col1:
     st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg", width=200)
 
