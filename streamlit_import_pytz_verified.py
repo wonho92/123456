@@ -21,23 +21,26 @@ def save_submission(file, data):
 
 
 
-
 import streamlit as st
 import pytz
 from datetime import datetime
 
+# 현재 시간 (대한민국 표준시) 표시
 seoul_tz = pytz.timezone("Asia/Seoul")
 now = seoul_tz.localize(datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
 
-st.markdown(f"<div style='text-align:right; font-size:14px; color:gray;'>🕒 현재 시간: {now}</div>", unsafe_allow_html=True)
-
-
+# 두 개의 컬럼 (로고 + 시간)
+col1, col2 = st.columns([1, 4])  # ✅ 이 줄 꼭 필요
 
 with col1:
     st.image("티사이언티픽로고(1538x582)_가로로 길게.png", width=180)
+
 with col2:
-    pass
-    
+    st.markdown(
+        f"<div style='text-align:right; font-size:14px; color:gray;'>🕒 현재 시간: {now}</div>",
+        unsafe_allow_html=True
+    )
+
 
 
 import pandas as pd
