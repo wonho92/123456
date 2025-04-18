@@ -33,7 +33,7 @@ now = seoul_tz.localize(datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
 col1, col2 = st.columns([1, 4])  # ✅ 이 줄 꼭 필요
 
 with col1:
-    st.image("photo_2024-03-27_12-59-40.jpg",  width=200)
+    st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg", width=200)
 
 with col2:
     st.markdown(
