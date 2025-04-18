@@ -219,11 +219,7 @@ elif any(menu == q["category"] for q in qa_data):
         if qa["category"] == menu:
             with st.expander("💬 " + qa["question"]):
                 st.write(qa["answer"])
-    st.header(f"📘 {menu}")
-    for qa in qa_data:
-        if qa["category"] == menu or (menu == "회사 제도 안내" and qa["category"].startswith("회사제도안내-")):
-            with st.expander("💬 " + qa["question"]):
-                st.write(qa["answer"])
+
     pass
 
 # 관리자 통계
