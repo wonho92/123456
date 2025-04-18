@@ -24,21 +24,13 @@ def save_submission(file, data):
 
 import streamlit as st
 import pytz
-
-
-
-
-
-
-
-col1, col2 = st.columns([1, 4])
-st.write("✅ pytz type: ", type(pytz))
+from datetime import datetime
 
 seoul_tz = pytz.timezone("Asia/Seoul")
-now = datetime.now(seoul_tz).strftime(...)
-now = datetime.now(seoul_tz).strftime("%Y-%m-%d %H:%M:%S")
+now = seoul_tz.localize(datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
 
 st.markdown(f"<div style='text-align:right; font-size:14px; color:gray;'>🕒 현재 시간: {now}</div>", unsafe_allow_html=True)
+
 
 
 with col1:
